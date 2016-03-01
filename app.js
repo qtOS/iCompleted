@@ -1,13 +1,26 @@
 var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    hbs = require('hbs'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser');
+    //uncomment this later for session and user building
+    // methodOverride = require('method-override'),
+    // session = require('express-session'),
+    // passport = require('passport'),
+    // LocalStrategy = require('passport-local'),
+    // TwitterStrategy = require('passport-twitter'),
+    // GoogleStrategy = require('passport-google'),
+    // FacebookStrategy = require('passport-facebook');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+//passport beginnings
+// var config = require('./config.js'), //config file contains all tokens and other private info
+//     funct = require('./functions.js'); //funct file contains our helper functions for our Passport and database work
+//~~~~~~~ continue with this later ^^^^^
 var app = express();
 
 // view engine setup
@@ -30,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
