@@ -14,8 +14,11 @@ var express = require('express');
     // GoogleStrategy = require('passport-google'),
     // FacebookStrategy = require('passport-facebook');
 
+require('./db/Database');
+require('./models/Goals');
+
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var goals = require('./routes/goals');
 
 //passport beginnings
 // var config = require('./config.js'), //config file contains all tokens and other private info
@@ -42,7 +45,7 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/goals', goals);
 
 
 // catch 404 and forward to error handler

@@ -1,2 +1,70 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<!DOCTYPE html>
+<html ng-app="iCompleted">
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript"
+    <script type="text/javascript" src="/javascripts/vendors/angular.min.js"></script>
+    <script type='text/javascript' src="/javascripts/angular-app.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">    <span class="glyphicon glyphicon-list-alt"></span>
+      {{title}}</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<section class="container">
+
+<article class="row">
+  <div class="col-md-12">
+    <h2>My Goals</h2>
+  </div>
+</article>
+
+<!-- angular GoalListCtrl -->
+<article ng-controller="GoalListCtrl">
+  <div class="col-md-4">
+  <h1>Create Task</h1>
+    <form ng-submit="createGoal(name, description)">
+    <input class='form-control' type="text" ng-model="name" name="name" />
+    <input class='form-control' type="text" ng-model="description" name="description" />
+    <input class='btn btn-primary' type="submit" id="submit" value="Submit" />
+    </form>
+  </div>
+
+  <div class="col-md-8">
+  <ul>
+    <li ng-repeat="goal in Goals">
+      <h4><span class="glyphicon glyphicon-chevron-right"> {{goal.name}}</span></h4>
+      <p><strong>Description</strong> <em>{{goal.description}}</em></p>
+      <p><strong>Done?</strong> <span data-goal="{{goal._id}}"class="glyphicon glyphicon-ok" ng-click="completeGoal(goal)"></span></p>
+    </li>
+  </ul>
+  </div>
+</article>
+
+<!-- end angular GoalListCtrl -->
+</section>
+
+
+  </body>
+</html>
