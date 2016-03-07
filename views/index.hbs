@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html ng-app="iCompleted">
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script type="text/javascript"
-    <script type="text/javascript" src="/javascripts/vendors/angular.min.js"></script>
-    <script type='text/javascript' src="/javascripts/angular-app.js"></script>
-  </head>
-  <body>
-
-    <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+  <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -19,10 +8,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">    <span class="glyphicon glyphicon-list-alt"></span>
-      {{title}}</a>
+      <a class="navbar-brand" href="#">{{title}}</a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -53,10 +40,13 @@
 
   <div class="col-md-8">
   <ul>
-    <li ng-repeat="goal in Goals">
-      <h4><span class="glyphicon glyphicon-chevron-right"> {{goal.name}}</span></h4>
-      <p><strong>Description</strong> <em>{{goal.description}}</em></p>
-      <p><strong>Done?</strong> <span data-goal="{{goal._id}}"class="glyphicon glyphicon-ok" ng-click="completeGoal(goal)"></span></p>
+    <li ng-repeat="goal in goals">
+      <h4><span> //goal.name//</span></h4>
+      <p><strong>Description</strong> <em>//goal.description//</em></p>
+      <p><strong>Done?</strong> <span data-goal="//goal._id//" ng-click="completeGoal(goal)">X</span></p>
+      <p>
+        //goal.created | date:'medium'//
+      </p>
     </li>
   </ul>
   </div>
@@ -64,7 +54,3 @@
 
 <!-- end angular GoalListCtrl -->
 </section>
-
-
-  </body>
-</html>
