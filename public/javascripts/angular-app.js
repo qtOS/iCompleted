@@ -20,6 +20,12 @@ iCompleted.controller('GoalListCtrl', function ($scope, $http) {
         console.log('created goal');
     });
   };
+  $scope.updateGoal = function(name, description){
+    $http.updateById("/goals/:id", {name: name, description: description}).success(function(data, status){
+      $scope.fetch();
+      console.log('updating');
+    })
+  }
 
   $scope.completeGoal = function(goal) {
     console.log(goal);

@@ -3,10 +3,10 @@
   <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Toggle navigation</span>
+        <span>Home</span>
+        <span></span>
+        <span></span>
       </button>
       <a class="navbar-brand" href="#">{{title}}</a>
     </div>
@@ -41,6 +41,9 @@
   <div class="col-md-8">
   <ul>
     <li ng-repeat="goal in goals">
+      <p>
+        last updated: //updated_at | date: 'short'//
+      </p>
       <h4><span> //goal.name//</span></h4>
       <p><strong>Description</strong> <em>//goal.description//</em></p>
       <p><strong>Done?</strong> <span data-goal="//goal._id//" ng-click="completeGoal(goal)">X</span></p>
