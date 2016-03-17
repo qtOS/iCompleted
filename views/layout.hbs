@@ -6,8 +6,38 @@
     <script type="text/javascript" src="/javascripts/vendors/angular.js"></script>
     <script type='text/javascript' src="/javascripts/angular-app.js"></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- this is to prevent favicon requests temp method -->
+    <!-- <link rel="shortcut icon" href="http://www.example.com/my_empty_resource" /> -->
+    <!-- this is to prevent favicon requests temp method -->
   </head>
   <body>
+    <div class="userLogin">
+      {{#if user}}
+      <a href="/account/logout">logout</a>
+      {{else}}
+      <form action="/account/login" method="post" id="login_form" class="userForms">
+        <input type="text" name="username" value="" placeholder="Username" required>
+        <input type="password" name="password" value="" placeholder="Password" required>
+        <input type="submit" value="Login">
+      </form>
+
+      <form action="/account/register" method="post" id="register_form" class="userForms">
+        <input type="text" name="username" value="" placeholder="Username" required>
+        <input type="email" name="email" value="" placeholder="Email" required>
+        <input type="password" name="password" value="" min="5"placeholder="Password" required>
+        <input type="submit" value="Create Account">
+      </form>
+      {{/if}}
+    </div>
+    <article class="row">
+      <div class="col-md-12">
+        {{#if user}}
+        <h2>{{user.username}} Goals</h2>
+        {{else}}
+        <h2>List o goals</h2>
+        {{/if}}
+      </div>
+    </article>
     {{{body}}}
   </body>
 </html>

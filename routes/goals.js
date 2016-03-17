@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-/* POST /api/Goals */
+/* POST /goals */
 router.post('/', function(req, res, next) {
   console.log(req.body);
   Goal.create(req.body, function (err, goal) {
@@ -28,8 +28,8 @@ router.post('/', function(req, res, next) {
   });
 });
 
-/* GET /Goals/id */
-// http://localhost:5000/api/Goals/5566a21e1e3a211aa1c63495
+/* GET /goals/id */
+// http://localhost:4000/goals/5566a21e1e3a211aa1c63495
 router.get('/:id', function(req, res, next) {
   Goal.findById(req.params.id, function (err, goal) {
     if (err) return next(err);

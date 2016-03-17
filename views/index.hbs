@@ -21,39 +21,41 @@
 
 <section class="container">
 
-<article class="row">
-  <div class="col-md-12">
-    <h2>My Goals</h2>
-  </div>
-</article>
+  <article class="row">
+    <div class="col-md-12">
+      {{#if user}}
+      <h2>{{user.username}} Goals</h2>
+      {{else}}
+      <h2>List o goals</h2>
+      {{/if}}
+    </div>
+  </article>
 
-<!-- angular GoalListCtrl -->
-<article ng-controller="GoalListCtrl">
-  <div class="col-md-4">
-  <h1>Create Task</h1>
-    <form ng-submit="createGoal(name, description)">
-    <input class='form-control' type="text" ng-model="name" name="name" />
-    <input class='form-control' type="text" ng-model="description" name="description" />
-    <input class='btn btn-primary' type="submit" id="submit" value="Submit" />
-    </form>
-  </div>
+  <!-- angular GoalListCtrl -->
+  <article ng-controller="GoalListCtrl">
+    <div class="col-md-4">
+      <h1>Create Task</h1>
+        <form ng-submit="createGoal(name, description)">
+          <input class='form-control' type="text" ng-model="name" name="name" />
+          <input class='form-control' type="text" ng-model="description" name="description" />
+          <input class='btn btn-primary' type="submit" id="submit" value="Submit" />
+        </form>
+    </div>
 
-  <div class="col-md-8">
-  <ul>
-    <li ng-repeat="goal in goals">
-      <p>
-        last updated: //updated_at | date: 'short'//
-      </p>
-      <h4><span> //goal.name//</span></h4>
-      <p><strong>Description</strong> <em>//goal.description//</em></p>
-      <p><strong>Done?</strong> <span data-goal="//goal._id//" ng-click="completeGoal(goal)">X</span></p>
-      <p>
-        //goal.created | date:'medium'//
-      </p>
-    </li>
-  </ul>
-  </div>
-</article>
-
-<!-- end angular GoalListCtrl -->
+    <div class="col-md-8">
+      <ul>
+        <li ng-repeat="goal in goals">
+          <p>
+            last updated: //updated_at | date: 'short'//
+          </p>
+          <h4><span> //goal.name//</span></h4>
+          <p><strong>Description</strong> <em>//goal.description//</em></p>
+          <p><strong>Done?</strong> <span data-goal="//goal._id//" ng-click="completeGoal(goal)">X</span></p>
+          <p>
+            //goal.created | date:'medium'//
+          </p>
+        </li>
+      </ul>
+    </div>
+  </article>
 </section>

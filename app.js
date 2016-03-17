@@ -1,37 +1,45 @@
-var express = require('express');
+var express = require('express'),
     path = require('path'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
     hbs = require('hbs'),
     cookieParser = require('cookie-parser'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
     //uncomment this later for session and user building
     // methodOverride = require('method-override'),
-    // session = require('express-session'),
-    // passport = require('passport'),
-    // LocalStrategy = require('passport-local'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy;
     // TwitterStrategy = require('passport-twitter'),
     // GoogleStrategy = require('passport-google'),
     // FacebookStrategy = require('passport-facebook');
 
 require('./db/Database');
-require('./models/Goals');
 
 var routes = require('./routes/index');
 var goals = require('./routes/goals');
+var accounts = require('./routes/accounts');
 
-//passport beginnings
-// var config = require('./config.js'), //config file contains all tokens and other private info
-//     funct = require('./functions.js'); //funct file contains our helper functions for our Passport and database work
-//~~~~~~~ continue with this later ^^^^^
 var app = express();
+
+app.use(require('express-session')({
+  secret: 'A- A- Roon',
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+var Models = require('./models/Account');
+passport.use(new LocalStrategy(Models.Account.authenticate()));
+passport.serializeUser(Models.Account.serializeUser());
+passport.deserializeUser(Models.Account.deserializeUser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -46,6 +54,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/goals', goals);
+app.use('/account', accounts)
 
 
 // catch 404 and forward to error handler
