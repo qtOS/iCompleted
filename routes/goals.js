@@ -39,6 +39,7 @@ router.get('/:id', function(req, res, next) {
 
 /* PUT /Goals/:id */
 router.put('/:id', function(req, res, next) {
+  console.log('putting');
   console.log(req.body);
   Goal.findByIdAndUpdate(req.params.id, req.body, function (err, goal) {
     if (err) return next(err);
@@ -48,6 +49,7 @@ router.put('/:id', function(req, res, next) {
 
 /* PATCH /Goals/:id */
 router.patch('/:id', function(req, res, next) {
+  console.log('patching')
   console.log(req.body);
   Goal.findByIdAndUpdate(req.params.id, req.body, function (err, goal) {
     if (err) return next(err);

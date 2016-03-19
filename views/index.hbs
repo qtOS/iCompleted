@@ -1,28 +1,7 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-  <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span>Toggle navigation</span>
-        <span>Home</span>
-        <span></span>
-        <span></span>
-      </button>
-      <a class="navbar-brand" href="#">{{title}}</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
-<section class="container">
-
-  <article class="row">
-    <div class="col-md-12">
+<section class="">
+  <article class="">
+    <div class="">
       {{#if user}}
       <h2>{{user.username}} Goals</h2>
       {{else}}
@@ -33,18 +12,24 @@
 
   <!-- angular GoalListCtrl -->
   <article ng-controller="GoalListCtrl">
-    <div class="col-md-4">
-      <h1>Create Task</h1>
+    <div class="">
+      <h1>Create Blog Post</h1>
         <form ng-submit="createGoal(name, description)">
           <input class='form-control' type="text" ng-model="name" name="name" />
           <input class='form-control' type="text" ng-model="description" name="description" />
-          <input class='btn btn-primary' type="submit" id="submit" value="Submit" />
+          <input class='' type="submit" id="submit" value="Submit" />
         </form>
     </div>
 
-    <div class="col-md-8">
+    <div class="" id="">
       <ul>
+        <form class="edit-form" ng-submit="updateGoal()">
+          <input type="text" id="name" name="name" value="//currentGoal.name//" ng-model="currentGoal.name">
+          <input type="text" id="description" name="description" value="//currentGoal.description//" ng-model="currentGoal.description">
+          <input type="submit" name="name" value="">
+        </form>
         <li ng-repeat="goal in goals">
+          <span data-goal="//goal._id//"><i class="fa fa-plus-square"></i><span>
           <p>
             last updated: //updated_at | date: 'short'//
           </p>
@@ -54,6 +39,8 @@
           <p>
             //goal.created | date:'medium'//
           </p>
+          <a href="#//goal._id//" ng-click="edit(goal)">++</a>
+          <!-- <button type="button" name="update" ng-click="updateGoal(goal)">[...]</button> -->
         </li>
       </ul>
     </div>

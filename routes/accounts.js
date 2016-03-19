@@ -10,7 +10,7 @@ passport.deserializeUser(Models.Account.deserializeUser());
 
 router.get('/', function(req, res, next) {
   console.log('rendering');
-  res.render('account', { user: req.user });
+  res.render('account', { user: req.user, email: req.email });
   console.log('render complete');
 });
 
@@ -28,15 +28,6 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/' }),
 
 router.post('/register', function(req, res){
   console.log('hit registeration');
-  var checkUsername = checkLength(req.body.username, 16);
-  var checkEmail = checkLength(req.body.email, 50);
-  var checkPassword = checkLength(req.body.password, 16);
-  console.log('ping2')
-  // if (checkUsername == false || checkEmail == false || checkPassword == false) {
-  //   return res.redirect('/');
-  //   console.log('returned false');
-  // }
-  console.log('passed check');
   Models.Account.register(new Models.Account({
       username: req.body.username,
       email: req.body.email
@@ -64,21 +55,6 @@ var checkLength = function(inputToCheck, maxLength) {
   }
 };
 
-//saving action
-// router.post('/savemap', function(req, res){
-//
-//   Models.User.findOneAndUpdate({
-//       'username': req.user.username
-//     },
-//     {
-//     }, function(err, User) {
-//       if (err) console.log(err);
-//       User.map.push(mapDetails);
-//       User.save();
-//     }
-//   )
-//   //res.redirect('/');
-// });
 
 router.get('/logout', function(req, res){
   req.logout();
