@@ -1,51 +1,50 @@
-
-<section class="">
-  <article class="">
-    <div class="">
-      {{#if user}}
-      <h2>{{user.username}} Goals</h2>
-      {{else}}
-      <h2>List o goals</h2>
-      {{/if}}
-    </div>
-  </article>
-
-  <!-- angular GoalListCtrl -->
-  <article id="goal-editor"ng-controller="GoalListCtrl">
-    <div class="">
-      <h1>Create Blog Post</h1>
-        <form ng-submit="createGoal(name, description)">
-          <input class='form-control' type="text" ng-model="name" name="name" />
-          <input class='form-control' type="text" ng-model="description" name="description" />
-          <input class='' type="submit" id="submit" value="Submit" />
-        </form>
-    </div>
-
-    <div class="" id="">
+  <h1>The Blog</h1>
+    {{#if user}}
+    <div id="blog-editor" ng-controller="GoalListCtrl">
+      <article>
+        <div>
+          <h1>Create Blog Post</h1>
+            <form ng-submit="createGoal(name, description)">
+              <input class='form-control' type="text" ng-model="name" name="name" required/>
+              <input class='form-control' type="text" ng-model="description" name="description" required/>
+              <input class='' type="submit" id="submit" value="Submit" />
+            </form>
+        </div>
       <ul>
-        <form id="edit-form" ng-submit="updateGoal()" style="display: none;">
-          <input type="text" id="name" name="name" value="//currentGoal.name//" ng-model="currentGoal.name">
-          <input type="text" id="description" name="description" value="//currentGoal.description//" ng-model="currentGoal.description">
-          <input type="hidden" name="currentTime" value="//Date | date: short//" ng-model="currentGoal.$currentDate">
-          <input type="submit" name="name" value="">
-        </form>
-        <li ng-repeat="goal in goals">
-          <span id="//goal._id//" data-goal="//goal._id//"><i class="fa fa-plus-square"></i><span>
+        <li ng-repeat="goal in goals | orderBy: 'createdAt'">
+          <span id="//goal._id//" data-goal="//goal._id//"><span>
           <p>
             last updated: //goal.updatedAt | date: 'short'//
           </p>
-          <h4> //goal.name//</h4>
-          <p>//goal.description//</p>
-          <p><strong>Done?</strong> <span data-goal="//goal._id//" ng-click="completeGoal(goal)">X</span></p>
-          <p>
+          <h2> //goal.name//</h2>
+          <p><strong>//goal.description//</strong></p>
+          <span>
             //goal.createdAt | date:'medium'//
-          </p>
-          {{#if user}}
-          <a href="#//goal._id//" ng-click="edit(goal)">++</a>
-          {{/if}}
-          <!-- <button type="button" name="update" ng-click="updateGoal(goal)">[...]</button> -->
+          </span>
+          <form id="edit-form" ng-submit="updateGoal()" style="display: none;">
+            <input type="text" id="name" name="name" ng-model="currentGoal.name" required>
+            <input type="text" id="description" name="description" ng-model="currentGoal.description" required>
+            <input type="submit" name="submit-edit" value="edit">
+          </form>
+          <span data-goal="//goal._id//" ng-click="completeGoal(goal)">X</span>
+          <span id="//goal._id//" ng-click="edit(goal)"><i class="fa fa-plus-square"></i></a>
         </li>
       </ul>
     </div>
+    {{else}}
+    <div ng-controller="GoalDeliveryCtrl">
+      <ul>
+        <li ng-repeat="goal in goals | orderBy: 'createdAt'">
+          <span id="//goal._id//" data-goal="//goal._id//"><span>
+          <p>
+            last updated: //goal.updatedAt | date: 'short'//
+          </p>
+          <h2> //goal.name//</h2>
+          <p><strong>//goal.description//</strong></p>
+          <span>//goal.createdAt | date:'medium'//</span>
+        </li>
+      </ul>
+      {{/if}}
+    </div>
   </article>
-</section>
+  </section>

@@ -35,6 +35,7 @@ router.post('/register', function(req, res){
     req.body.password,
     function(err, account) {
       if (err) {
+        console.log('38');
         return res.render('/', { account: account });
         // message to require registering
       }
@@ -46,14 +47,6 @@ router.post('/register', function(req, res){
   );
   console.log('passed Models.Account.register');
 });
-
-var checkLength = function(inputToCheck, maxLength) {
-  if (inputToCheck.length < 5 || inputToCheck.length > maxLength) {
-    return false;
-  } else {
-    return true;
-  }
-};
 
 
 router.get('/logout', function(req, res){

@@ -4,40 +4,35 @@
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type="text/javascript" src="/javascripts/vendors/angular.js"></script>
-    <script type="text/javascript" src="javascripts/vendors/sweetalert.min.js"></script>
+    <!-- <script type="text/javascript" src="javascripts/vendors/sweetalert.min.js"></script> -->
     <script type='text/javascript' src="/javascripts/angular-app.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="/javascripts/vendors/sweetalert.css">
+    <!-- <link rel="stylesheet" href="/javascripts/vendors/sweetalert.css"> -->
+    <script type='text/javascript' src="/javascripts/temp.js"></script>
+
   </head>
   <body>
     <div class="userLogin">
       {{#if user}}
       <a href="/account/logout">logout</a>
       {{else}}
-      <form action="/account/login" method="post" id="login_form" class="userForms">
-        <input type="text" name="username" value="" placeholder="Username" required>
-        <input type="password" name="password" value="" placeholder="Password" required>
-        <input type="submit" value="Login">
-      </form>
-
-      <form action="/account/register" method="post" id="register_form" class="userForms">
-        <input type="text" name="username" value="" placeholder="Username" required>
-        <input type="email" name="email" value="" placeholder="Email" required>
-        <input type="password" name="password" value="" min="5"placeholder="Password" required>
-        <input type="submit" value="Create Account">
-      </form>
+      <div id="user-login">
+        <form action="/account/login" method="post" id="login_form" class="userForms">
+          <input type="text" name="username" value="" placeholder="Username" required>
+          <input type="password" name="password" value="" placeholder="Password" required>
+          <input type="submit" value="Login">
+        </form>
+      </div>
       {{/if}}
     </div>
-    <article class="row">
-      <div class="col-md-12">
+    <article>
+      <div>
         {{#if user}}
-        <h2>{{user.username}} Goals @ {{user.email}}</h2>
+        <h2>{{user.username}}, Ready to post? This account's email: {{user.email}}</h2>
         {{else}}
-        <p>
-          please log in
-        </p>
+        <h1>Subject + Thought</h1>
         {{/if}}
       </div>
     </article>
