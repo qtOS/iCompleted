@@ -21,10 +21,10 @@ router.get('/', function(req, res, next) {
 
 /* POST /goals */
 router.post('/', function(req, res, next) {
-  console.log(req.body);
   Goal.create(req.body, function (err, goal) {
     if (err) return next(err);
     res.json(goal);
+    console.log(goal.createdAt);
   });
 });
 
@@ -44,6 +44,7 @@ router.put('/:id', function(req, res, next) {
   Goal.findByIdAndUpdate(req.params.id, req.body, function (err, goal) {
     if (err) return next(err);
     res.json(goal);
+    console.log(goal.updatedAt);
   });
 });
 
@@ -54,6 +55,7 @@ router.patch('/:id', function(req, res, next) {
   Goal.findByIdAndUpdate(req.params.id, req.body, function (err, goal) {
     if (err) return next(err);
     res.json(goal);
+    console.log(goal.updatedAt);
   });
 });
 

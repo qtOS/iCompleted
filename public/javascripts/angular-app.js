@@ -25,18 +25,20 @@ iCompleted.controller('GoalListCtrl', function ($scope, $http) {
       $scope.fetch();
       console.log('edit complete');
       console.log($('#name'));
+      $("#edit-form").hide();
     });
   }
   $scope.edit = function(goal){
     console.log(goal._id);
     $scope.currentGoal = goal;
+    $('#edit-form').show();
   }
-  $scope.saveGoal = function(goal){
-    $http.put("/goals/", {name: name, description: description, updated_at: Date}).success(function(data, status){
-      $scope.fetch();
-      console.log('updating');
-    })
-  }
+  // $scope.saveGoal = function(goal){
+  //   $http.put("/goals/", {name: name, description: description, updated_at: Date}).success(function(data, status){
+  //     $scope.fetch();
+  //     console.log('updating');
+  //   })
+  // }
 
   $scope.completeGoal = function(goal) {
     console.log(goal);

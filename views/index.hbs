@@ -11,7 +11,7 @@
   </article>
 
   <!-- angular GoalListCtrl -->
-  <article ng-controller="GoalListCtrl">
+  <article id="goal-editor"ng-controller="GoalListCtrl">
     <div class="">
       <h1>Create Blog Post</h1>
         <form ng-submit="createGoal(name, description)">
@@ -23,23 +23,26 @@
 
     <div class="" id="">
       <ul>
-        <form class="edit-form" ng-submit="updateGoal()">
+        <form id="edit-form" ng-submit="updateGoal()" style="display: none;">
           <input type="text" id="name" name="name" value="//currentGoal.name//" ng-model="currentGoal.name">
           <input type="text" id="description" name="description" value="//currentGoal.description//" ng-model="currentGoal.description">
+          <input type="hidden" name="currentTime" value="//Date | date: short//" ng-model="currentGoal.$currentDate">
           <input type="submit" name="name" value="">
         </form>
         <li ng-repeat="goal in goals">
-          <span data-goal="//goal._id//"><i class="fa fa-plus-square"></i><span>
+          <span id="//goal._id//" data-goal="//goal._id//"><i class="fa fa-plus-square"></i><span>
           <p>
-            last updated: //updated_at | date: 'short'//
+            last updated: //goal.updatedAt | date: 'short'//
           </p>
-          <h4><span> //goal.name//</span></h4>
-          <p><strong>Description</strong> <em>//goal.description//</em></p>
+          <h4> //goal.name//</h4>
+          <p>//goal.description//</p>
           <p><strong>Done?</strong> <span data-goal="//goal._id//" ng-click="completeGoal(goal)">X</span></p>
           <p>
-            //goal.created | date:'medium'//
+            //goal.createdAt | date:'medium'//
           </p>
+          {{#if user}}
           <a href="#//goal._id//" ng-click="edit(goal)">++</a>
+          {{/if}}
           <!-- <button type="button" name="update" ng-click="updateGoal(goal)">[...]</button> -->
         </li>
       </ul>

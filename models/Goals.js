@@ -5,8 +5,8 @@ var GoalSchema = new mongoose.Schema({
   created: { type: Date, default: Date.now },
   completed: Boolean,
   description: String,
-  updated_at: { type: Date, default: Date.now }
-});
+},
+{timestamps: true});
 
 // export!
 module.exports = mongoose.model('Goal', GoalSchema);
