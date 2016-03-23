@@ -18,21 +18,23 @@
       {{#if user}}
       <a href="/account/logout">logout</a>
       {{else}}
-      <div id="user-login">
-        <form action="/account/login" method="post" id="login_form" class="userForms">
-          <input type="text" name="username" value="" placeholder="Username" required>
-          <input type="password" name="password" value="" placeholder="Password" required>
-          <input type="submit" value="Login">
-        </form>
+      <div id="login-container">
+        <div id="user-login">
+          <form action="/account/login" method="post" id="login_form" class="userForms">
+            <input type="text" name="username" value="" placeholder="Username" required>
+            <input type="password" name="password" value="" placeholder="Password" required>
+            <input type="submit" value="Login">
+          </form>
+        </div>
       </div>
       {{/if}}
     </div>
-    <article>
-      <div>
+    <article id="info-container">
+      <div id="sub-info-container">
         {{#if user}}
         <h2>{{user.username}}, Ready to post? This account's email: {{user.email}}</h2>
         {{else}}
-        <h1>Subject + Thought</h1>
+        <h1 id="nav-btn">hello<i class="fa fa-bars"></i></h1>
         {{/if}}
       </div>
     </article>

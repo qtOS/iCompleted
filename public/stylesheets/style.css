@@ -1,8 +1,100 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
-a {
-  color: #00B7FF; }
+  background: gray;
+  margin: 0; }
+  body .userLogin #login-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998; }
+    body .userLogin #login-container #user-login {
+      position: fixed;
+      top: 30%;
+      bottom: 30%;
+      right: 40%;
+      left: 40%;
+      padding: 2%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 999; }
+      body .userLogin #login-container #user-login input {
+        width: 100%;
+        font-size: 3vh;
+        padding: 0;
+        border: none;
+        margin-top: 5vh; }
+  body #info-container {
+    color: blue;
+    margin: 0;
+    right: 0;
+    width: auto;
+    padding: 2%;
+    background-color: rgba(17, 17, 17, 0.9);
+    position: fixed;
+    z-index: 1; }
+    body #info-container h1 {
+      margin: 0;
+      text-align: center; }
+  body #goal-delctrl {
+    background-color: black;
+    color: white;
+    width: 70%;
+    position: fixed;
+    height: 100%; }
+    body #goal-delctrl h1 {
+      width: 95%;
+      margin: 0;
+      padding: 2.5%;
+      z-index: 2;
+      background: black;
+      font-size: 8vh; }
+    body #goal-delctrl ol {
+      width: 5%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: blue;
+      float: left; }
+      body #goal-delctrl ol li {
+        margin: 10px 0;
+        padding: 0;
+        font-size: .75vw; }
+        body #goal-delctrl ol li .quickRef {
+          text-decoration: none;
+          color: white; }
+    body #goal-delctrl ul {
+      width: 95%;
+      height: 100%;
+      padding: 0;
+      float: right;
+      margin: 0;
+      overflow-y: auto; }
+      body #goal-delctrl ul li {
+        list-style: none;
+        width: 100%;
+        min-height: auto;
+        max-height: 100%;
+        background-color: green;
+        padding: 0;
+        margin: 0;
+        overflow-y: auto;
+        margin-bottom: 10px; }
+        body #goal-delctrl ul li .timeStamp {
+          text-align: right;
+          display: block;
+          color: black;
+          font-size: 2vh;
+          padding-right: 2.5%; }
+        body #goal-delctrl ul li .goalName {
+          margin-left: 5%;
+          font-size: 5vh; }
+        body #goal-delctrl ul li .goalDesc {
+          font-size: 2.5vh;
+          padding: 2.5%;
+          width: 80%;
+          background-color: black;
+          margin-left: 7.5%; }
 
 /*# sourceMappingURL=style.css.map */
