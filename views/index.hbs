@@ -34,9 +34,9 @@
 <div id="goal-delctrl" ng-controller="GoalDeliveryCtrl">
   <h1>Subject + Thought</h1>
   <ol>
-    <li ng-repeat="goal in goals | orderBy: 'createdAt'"><a href="#//goal._id//" class="quickRef">//goal.name// | //goal.createdAt | date:'dd/MM'//</a></li>
+    <li ng-repeat="goal in goals | orderBy: 'createdAt'" class="refLi"><a href="#//goal._id//" class="quickRef">| //goal.name// | //goal.createdAt | date:'dd/MM'//</a></li>
   </ol>
-  <ul>
+  <ul id="goals-ul">
     <li ng-repeat="goal in goals | orderBy: 'createdAt'">
       <span id="//goal._id//" data-goal="//goal._id//"><span>
       <span class="updatedAt timeStamp">

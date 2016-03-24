@@ -1,6 +1,15 @@
 body {
   background: gray;
   margin: 0; }
+  body #loading-panel {
+    display: none;
+    position: fixed;
+    top: 40%;
+    bottom: 40%;
+    right: 40%;
+    left: 40%;
+    background-color: blue;
+    z-index: 999; }
   body .userLogin #login-container {
     display: none;
     position: fixed;
@@ -26,21 +35,66 @@ body {
         border: none;
         margin-top: 5vh; }
   body #info-container {
-    color: blue;
-    margin: 0;
-    right: 0;
-    width: auto;
-    padding: 2%;
-    background-color: rgba(17, 17, 17, 0.9);
     position: fixed;
-    z-index: 1; }
-    body #info-container h1 {
+    padding: 2.5%;
+    right: 5%; }
+    body #info-container #sub-info-container #navigation-container {
+      position: fixed;
+      right: -40%;
+      top: 35%;
+      opacity: 0;
+      width: 10%;
+      z-index: 3;
+      color: white; }
+      body #info-container #sub-info-container #navigation-container #user-btn {
+        text-align: right;
+        float: right;
+        display: block;
+        width: auto;
+        padding-left: 5%;
+        position: absolute;
+        background: purple; }
+      body #info-container #sub-info-container #navigation-container a {
+        text-decoration: none;
+        margin: 2vh 0;
+        text-align: center;
+        width: 100%;
+        display: block;
+        font-size: 3vh;
+        color: white;
+        padding: 10% 5%; }
+    body #info-container #sub-info-container .active {
+      -moz-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+      opacity: .7;
+      font-size: 5vh; }
+    body #info-container #sub-info-container .not {
+      opacity: 1;
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+      font-size: 10vh; }
+    body #info-container #sub-info-container #nav-btn {
       margin: 0;
-      text-align: center; }
+      text-align: center;
+      display: block;
+      z-index: 1;
+      -webkit-transition: all 500ms linear;
+      -moz-transition: all 500ms linear;
+      -ms-transition: all 500ms linear;
+      -o-transition: all 500ms linear;
+      transition: all 500ms linear; }
+      body #info-container #sub-info-container #nav-btn:hover {
+        cursor: pointer; }
   body #goal-delctrl {
     background-color: black;
     color: white;
-    width: 70%;
+    width: 75%;
     position: fixed;
     height: 100%; }
     body #goal-delctrl h1 {
@@ -60,21 +114,23 @@ body {
       body #goal-delctrl ol li {
         margin: 10px 0;
         padding: 0;
-        font-size: .75vw; }
+        font-size: .75vw;
+        text-align: center; }
         body #goal-delctrl ol li .quickRef {
           text-decoration: none;
           color: white; }
     body #goal-delctrl ul {
       width: 95%;
-      height: 100%;
+      height: 80%;
       padding: 0;
-      float: right;
+      padding-bottom: 5%;
       margin: 0;
+      background-color: red;
       overflow-y: auto; }
       body #goal-delctrl ul li {
         list-style: none;
-        width: 100%;
-        min-height: auto;
+        width: 100.05%;
+        min-height: 85%;
         max-height: 100%;
         background-color: green;
         padding: 0;
@@ -91,10 +147,14 @@ body {
           margin-left: 5%;
           font-size: 5vh; }
         body #goal-delctrl ul li .goalDesc {
-          font-size: 2.5vh;
+          font-size: 3vh;
           padding: 2.5%;
           width: 80%;
+          min-height: 30vh;
+          max-height: 35vh;
+          overflow-y: auto;
           background-color: black;
-          margin-left: 7.5%; }
+          margin-left: 7.5%;
+          line-height: 150%; }
 
 /*# sourceMappingURL=style.css.map */
