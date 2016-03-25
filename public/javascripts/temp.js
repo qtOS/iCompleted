@@ -12,7 +12,7 @@ $(function(){
   },
   NavDisOff = {
     "opacity": 0,
-    "right": "-40%"
+    "right": "-10%"
   }
   var ctr = 0;
   var processing = false;
@@ -68,8 +68,60 @@ $(function(){
       }
     }
   })
+  //~~~~~~~ end of userlogin
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //end of navigation
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //Beginning of goal list collapsable
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+var $collapsableBtn = $("#activate-nd-list"),
+    $fadeIn = $(".fadeIn"),
+    $faded = $(".faded"),
+    $theLi = $(".refLi"),
+    $goalOl =$("#goal-jump-list");
 
+    var collaspedOl = {
+      "height": "10%"
+    },
+    expandedOl = {
+      "height": "100%"
+    };
+
+    var clpsd = 0,
+        inprog = false;
+    $collapsableBtn.click(function(){
+      if(0 == clpsd % 2 && inprog == false){
+        inprog = true;
+        console.log('expand');
+        $goalOl.children().show();
+        $goalOl.animate(expandedOl, 500, function(){
+          $goalOl.children().animate({"opacity": 1}, 1000, function(){
+            inprog = false;
+          });
+        });
+        clpsd++;
+      }else if(1 === clpsd % 2 && inprog == false){
+        inprog = true;
+        console.log('clicked');
+        $goalOl.children().animate({"opacity": 0}, 500, function(){
+          $goalOl.children().hide();
+          $goalOl.animate(collaspedOl, 500, function(){
+          });
+          inprog = false;
+        });
+        clpsd++;
+      }else{
+        console.log('inprogress, please wait');
+      }
+    });
+    console.log($('.quickRef'));
+    // $(".quickRef").click(function(e){
+    //   e.preventDefault();
+    //   console.log('clicked');
+    // });
 
   // console.log($(".refLi"));
   // function goToByScroll(id){

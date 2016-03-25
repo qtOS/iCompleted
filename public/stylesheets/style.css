@@ -1,6 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Cinzel);
 body {
-  background: gray;
-  margin: 0; }
+  background: #fcfff5;
+  margin: 0;
+  font-family: "Cinzel", serif; }
   body #loading-panel {
     display: none;
     position: fixed;
@@ -18,50 +20,64 @@ body {
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 998; }
+    z-index: 998;
+    color: white;
+    text-align: center; }
     body .userLogin #login-container #user-login {
       position: fixed;
-      top: 30%;
-      bottom: 30%;
-      right: 40%;
-      left: 40%;
+      top: 30vh;
+      bottom: 30vh;
+      right: 40vw;
+      left: 40vw;
       padding: 2%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(255, 255, 255, 0.5);
       z-index: 999; }
       body .userLogin #login-container #user-login input {
-        width: 100%;
+        width: 96%;
         font-size: 3vh;
         padding: 0;
         border: none;
-        margin-top: 5vh; }
+        background-color: rgba(255, 255, 255, 0.8);
+        margin-top: 5vh;
+        padding: 1% 2%;
+        color: rgba(0, 0, 0, 0.8); }
+      body .userLogin #login-container #user-login button {
+        margin-top: 6vh;
+        border: 2px solid white;
+        background: none;
+        padding: 2.5%;
+        width: 50%;
+        color: white; }
+      body .userLogin #login-container #user-login #exit-login {
+        border: 2px white solid;
+        padding: 5% 15%;
+        cursor: pointer; }
   body #info-container {
     position: fixed;
     padding: 2.5%;
     right: 5%; }
     body #info-container #sub-info-container #navigation-container {
       position: fixed;
-      right: -40%;
+      right: -10%;
       top: 35%;
       opacity: 0;
       width: 10%;
-      z-index: 3;
-      color: white; }
+      z-index: 3; }
       body #info-container #sub-info-container #navigation-container #user-btn {
         text-align: right;
         float: right;
         display: block;
         width: auto;
         padding-left: 5%;
-        position: absolute;
-        background: purple; }
+        position: absolute; }
       body #info-container #sub-info-container #navigation-container a {
         text-decoration: none;
         margin: 2vh 0;
         text-align: center;
         width: 100%;
         display: block;
-        font-size: 3vh;
-        color: white;
+        font-size: 2.5vh;
+        color: black;
         padding: 10% 5%; }
     body #info-container #sub-info-container .active {
       -moz-transform: rotate(90deg);
@@ -91,70 +107,73 @@ body {
       transition: all 500ms linear; }
       body #info-container #sub-info-container #nav-btn:hover {
         cursor: pointer; }
+  body #activate-nd-list {
+    width: auto;
+    background: blue;
+    margin: 0;
+    font-size: 6vh;
+    color: black;
+    position: fixed;
+    padding: 2.5%;
+    cursor: pointer;
+    content: "nothing"; }
   body #goal-delctrl {
-    background-color: black;
+    top: 20%;
     color: white;
     width: 75%;
     position: fixed;
-    height: 100%; }
-    body #goal-delctrl h1 {
-      width: 95%;
-      margin: 0;
-      padding: 2.5%;
-      z-index: 2;
-      background: black;
-      font-size: 8vh; }
-    body #goal-delctrl ol {
-      width: 5%;
-      height: 100%;
+    height: 80%; }
+    body #goal-delctrl #goal-jump-list {
+      width: 10%;
+      height: 10%;
       margin: 0;
       padding: 0;
-      background: blue;
+      background: #fcfff5;
       float: left; }
-      body #goal-delctrl ol li {
+      body #goal-delctrl #goal-jump-list li {
         margin: 10px 0;
         padding: 0;
-        font-size: .75vw;
-        text-align: center; }
-        body #goal-delctrl ol li .quickRef {
+        font-size: .5vw;
+        text-align: center;
+        opacity: 0;
+        display: none; }
+        body #goal-delctrl #goal-jump-list li a {
           text-decoration: none;
-          color: white; }
+          color: black; }
     body #goal-delctrl ul {
-      width: 95%;
-      height: 80%;
+      width: 90%;
+      height: 100%;
       padding: 0;
-      padding-bottom: 5%;
       margin: 0;
-      background-color: red;
-      overflow-y: auto; }
+      overflow-y: scroll; }
       body #goal-delctrl ul li {
         list-style: none;
-        width: 100.05%;
-        min-height: 85%;
-        max-height: 100%;
-        background-color: green;
+        width: 100%;
+        min-height: 100%;
         padding: 0;
         margin: 0;
         overflow-y: auto;
-        margin-bottom: 10px; }
+        color: black; }
         body #goal-delctrl ul li .timeStamp {
           text-align: right;
           display: block;
           color: black;
           font-size: 2vh;
-          padding-right: 2.5%; }
+          padding-right: 2.5%;
+          padding-top: 1.5%; }
         body #goal-delctrl ul li .goalName {
           margin-left: 5%;
           font-size: 5vh; }
         body #goal-delctrl ul li .goalDesc {
+          color: white;
           font-size: 3vh;
           padding: 2.5%;
           width: 80%;
-          min-height: 30vh;
-          max-height: 35vh;
+          min-height: 45vh;
+          max-height: 45vh;
           overflow-y: auto;
-          background-color: black;
           margin-left: 7.5%;
-          line-height: 150%; }
+          line-height: 150%;
+          background-color: rgba(62, 96, 111, 0.9); }
 
 /*# sourceMappingURL=style.css.map */

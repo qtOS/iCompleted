@@ -18,11 +18,11 @@
       {{else}}
       <div id="login-container">
         <div id="user-login">
-          <span id="exit-login">XXX</span>
+          <span id="exit-login">Close</span>
           <form action="/account/login" method="post" id="login_form" class="userForms">
             <input type="text" name="username" value="" placeholder="Username" required>
             <input type="password" name="password" value="" placeholder="Password" required>
-            <input type="submit" value="Login">
+            <button type="submit" name="button"><i class="fa fa-arrow-right"></i></button>
           </form>
         </div>
       </div>
@@ -34,8 +34,12 @@
         <div id="navigation-container">
           <a href="/about">ABOUT</a>
           <a href="/blog">BLOG</a>
-          <a href="/">HOME</a>
+          <a href="/">PORTFOLIO</a>
+          {{#if user}}
+          <a href="/account/logout">logout</a>
+          {{else}}
           <span id="user-btn">&nbsp;</span>
+          {{/if}}
           <!-- <span id="login-btn"><i class="fa fa-user-secret"></i></span> -->
         </div>
         {{#if user}}
