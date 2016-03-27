@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 
 var connectionString = "mongodb://localhost/iCompleted";
+if (process.env.NODE_ENV === 'production') {
+    connectionString = process.env.MONGOLAB_URI;
+}
 mongoose.connect(connectionString);
 
 mongoose.connection.on('connected', function() {
