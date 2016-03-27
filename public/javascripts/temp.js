@@ -117,7 +117,40 @@ var $collapsableBtn = $("#activate-nd-list"),
         console.log('inprogress, please wait');
       }
     });
-    console.log($('.quickRef'));
+    //
+    //
+    //
+    var quotes = ["Computers make excellent and efficient servants, but I have no wish to serve under them.", "The needs of the many outweigh the needs of the few, or the one.", "Change is the essential process of all existence.", "It is curious how often you humans manage to obtain that which you do not want.", "If I seem insensitive to what you’re going through, Captain, understand – it’s the way I am.", "May I say that I have not thoroughly enjoyed serving with Humans? I find their illogic and foolish emotions a constant irritant."],
+        grabQuote1 = quotes[Math.floor(Math.random() * quotes.length)],
+        grabQuote2 = quotes[Math.floor(Math.random() * quotes.length)],
+        dld = false;
+    swal.setDefaults({
+      confirmButtonColor: 'none'
+    });
+    $('#pf-title').on('click', function(){
+      if(dld == false){
+        $('#pf-title > a').removeAttr('id');
+        swal({
+          title: "You've downloaded my Résumé!",
+          text: "Thank you for finding my site, I hope you enjoy it.",
+          timer: 3000,
+          showConfirmButton: false
+        });
+        dld = true;
+      }else{
+        if(dld == true){
+          $('#pf-title > a').removeAttr("download").removeAttr('href');
+        }
+        grabQuote1 = quotes[Math.floor(Math.random() * quotes.length)];
+        grabQuote2 = quotes[Math.floor(Math.random() * quotes.length)];
+
+        swal({
+          title: grabQuote1,
+          text: grabQuote2,
+          showConfirmButton: true
+        })
+      }
+    })
     // $(".quickRef").click(function(e){
     //   e.preventDefault();
     //   console.log('clicked');

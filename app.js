@@ -53,7 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/goals', goals);
-app.use('/account', accounts)
+app.use('/account', accounts);
 
 
 // catch 404 and forward to error handler

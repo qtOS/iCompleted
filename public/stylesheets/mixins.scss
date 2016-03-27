@@ -1,0 +1,104 @@
+@mixin fastX($prop){
+    -webkit-transition: $prop 500ms linear;
+    -moz-transition: $prop 500ms linear;
+    -ms-transition: $prop 500ms linear;
+    -o-transition: $prop 500ms linear;
+    transition: $prop 500ms linear;
+}
+
+@mixin pulsate() {
+  @-webkit-keyframes pulsate {
+    0%   { font-size: 5vw; }
+    50%  { font-size: 4vw; }
+    100% { font-size: 5vw; }
+  }
+  @-moz-keyframes pulsate {
+    0%   { font-size: 5vw; }
+    50%  { font-size: 4vw; }
+    100% { font-size: 5vw; }
+  }
+  @-o-keyframes pulsate {
+    0%   { font-size: 5vw; }
+    50%  { font-size: 4vw; }
+    100% { font-size: 5vw; }
+  }
+  @keyframes pulsate {
+    0%   { font-size: 5vw; }
+    50%  { font-size: 4vw; }
+    100% { font-size: 5vw; }
+  }
+}
+@mixin colsate() {
+  @-webkit-keyframes colsate {
+    0%   { opacity: 1; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  @-moz-keyframes colsate {
+    0%   { opacity: 1; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  @-o-keyframes colsate {
+    0%   { opacity: 1; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  @keyframes colsate {
+    0%   { opacity: 1; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+}
+@mixin animationOptions($name, $time, $dur){
+  -webkit-animation: $name $time $dur; /* Safari 4+ */
+  -moz-animation:    $name $time $dur; /* Fx 5+ */
+  -o-animation:      $name $time $dur; /* Opera 12+ */
+  animation:         $name $time $dur;
+}
+
+@mixin scrollBar() {
+  ::-webkit-scrollbar {
+
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: none;
+    border: 2px solid $dark;
+    border-radius: 0px;
+    border-top: none;
+    border-bottom: none;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $darkest;
+    border-color: $darkest;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: $dark;
+    border-color: $dark;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FCFFF5;
+    border: 0px none #ffffff;
+    border-radius: 0px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    border: 2px solid $dark;
+    border-top: none;
+    border-bottom: none;
+  }
+  ::-webkit-scrollbar-track:active {
+    //background: #EDF0E6;
+    background: #FCFFF5;
+    border: 2px solid $darkest;
+    border-top: none;
+    border-bottom: none;
+
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

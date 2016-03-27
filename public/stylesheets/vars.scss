@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Cinzel);
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,100italic,300italic);
+$textFont: 'Roboto', sans-serif;
 $font: 'Cinzel', serif;
 $cremegrey: rgba(#FCFFF5, 1);
+$midCol: #91AA9D;
 $dark: #3e606f;
+$darkest: #193441;
 $colorScheme: $cremegrey,#D1DBBD, #91AA9D, #3E606F, #193441;

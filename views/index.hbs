@@ -10,7 +10,7 @@
         </form>
     </div>
   <ul>
-    <li ng-repeat="goal in goals | orderBy: 'createdAt'">
+    <li ng-repeat="goal in goals | orderBy: 'createdAt' : reverse = true">
       <span id="//goal._id//" data-goal="//goal._id//"><span>
       <p>
         last updated: //goal.updatedAt | date: 'short'//

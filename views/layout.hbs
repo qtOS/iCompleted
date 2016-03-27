@@ -5,7 +5,9 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type="text/javascript" src="/javascripts/vendors/angular.js"></script>
     <script type='text/javascript' src="/javascripts/angular-app.js"></script>
+    <script type="text/javascript" src="/javascripts/vendors/sweetalert.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/vendors/sweetalert.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type='text/javascript' src="/javascripts/temp.js"></script>
@@ -32,9 +34,9 @@
       <div id="sub-info-container">
         <span id="nav-btn" class="not"><i class="fa fa-bars"></i></span>
         <div id="navigation-container">
-          <a href="/about">ABOUT</a>
+          <a href="/portfolio">PORTFOLIO</a>
           <a href="/blog">BLOG</a>
-          <a href="/">PORTFOLIO</a>
+          <a href="/">ABOUT</a>
           {{#if user}}
           <a href="/account/logout">logout</a>
           {{else}}
@@ -42,13 +44,13 @@
           {{/if}}
           <!-- <span id="login-btn"><i class="fa fa-user-secret"></i></span> -->
         </div>
-        {{#if user}}
-        <h2>{{user.username}}, Ready to post? This account's email: {{user.email}}</h2>
-        {{else}}
-
-        {{/if}}
       </div>
     </article>
+    {{#if user}}
+    <h2>{{user.username}} :: {{user.email}}</h2>
+    {{else}}
+
+    {{/if}}
     {{{body}}}
   </body>
 </html>
