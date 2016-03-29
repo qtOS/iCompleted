@@ -8,45 +8,45 @@
 
 @mixin pulsate() {
   @-webkit-keyframes pulsate {
-    0%   { font-size: 5vw; }
-    50%  { font-size: 4vw; }
-    100% { font-size: 5vw; }
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 0; }
   }
   @-moz-keyframes pulsate {
-    0%   { font-size: 5vw; }
-    50%  { font-size: 4vw; }
-    100% { font-size: 5vw; }
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 0; }
   }
   @-o-keyframes pulsate {
-    0%   { font-size: 5vw; }
-    50%  { font-size: 4vw; }
-    100% { font-size: 5vw; }
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 0; }
   }
   @keyframes pulsate {
-    0%   { font-size: 5vw; }
-    50%  { font-size: 4vw; }
-    100% { font-size: 5vw; }
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 0; }
   }
 }
 @mixin colsate() {
   @-webkit-keyframes colsate {
     0%   { opacity: 1; }
-    50%  { opacity: .5; }
+    50%  { opacity: .2; }
     100% { opacity: 1; }
   }
   @-moz-keyframes colsate {
     0%   { opacity: 1; }
-    50%  { opacity: .5; }
+    50%  { opacity: .2; }
     100% { opacity: 1; }
   }
   @-o-keyframes colsate {
     0%   { opacity: 1; }
-    50%  { opacity: .5; }
+    50%  { opacity: .2; }
     100% { opacity: 1; }
   }
   @keyframes colsate {
     0%   { opacity: 1; }
-    50%  { opacity: .5; }
+    50%  { opacity: .2; }
     100% { opacity: 1; }
   }
 }

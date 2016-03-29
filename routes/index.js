@@ -49,7 +49,7 @@ router.get('/blog', function(req, res, next) {
 router.get('/', function(req, res, next){
   res.render('about', {
     basicInfo: basicInfo,
-    title: 'About me'
+    title: 'Aaron Krueger Web Portfolio'
   });
 })
 

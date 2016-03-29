@@ -33,9 +33,8 @@
 {{else}}
 <h1 id="activate-nd-list">Subject + Thought</h1>
 <div id="goal-delctrl" ng-controller="GoalDeliveryCtrl">
-
-
   <ol id="goal-jump-list">
+    <li id="empty-li">&nbsp;</li>
     <li ng-repeat="goal in goals | orderBy: 'createdAt' : reverse = true" class="refLi faded">
       <a href="#//goal._id//" class="quickRef">//goal.name// | //goal.createdAt | date:'dd/MM'//</a>
     </li>
