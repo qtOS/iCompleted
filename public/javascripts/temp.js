@@ -103,6 +103,9 @@ var $collapsableBtn = $("#activate-nd-list"),
         $goalOl.animate(expandedOl, 500, function(){
           $goalOl.children().animate({"opacity": 1}, 1000, function(){
             inprog = false;
+            $collapsableBtn.animate({color: '#91AA9D'}, 500, function(){
+              console.log('completed');
+            });
           });
         });
         clpsd++;
@@ -112,6 +115,9 @@ var $collapsableBtn = $("#activate-nd-list"),
         $goalOl.children().animate({"opacity": 0}, 500, function(){
           $goalOl.children().hide();
           $goalOl.animate(collaspedOl, 500, function(){
+            $collapsableBtn.animate({color: "#193441"}, 500, function(){
+              console.log('reverted');
+            });
           });
           inprog = false;
         });
@@ -162,8 +168,6 @@ var $collapsableBtn = $("#activate-nd-list"),
         })
       }
     })
-
-    $('footer').addEventListener('webkitAnimationEnd',function( event ) { $('footer').style.display = 'none'; }, false);
     // $('#portfolio-container ul li:nth-child(2)').mouseover(function(){
     //   $('footer').animate({'opacity': 0}, 2000, function(){
     //       $('footer').remove();
