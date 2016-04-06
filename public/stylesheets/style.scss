@@ -176,7 +176,6 @@ body{
         opacity: 0;
         width: 10%;
         z-index: 3;
-
         // .active{
         //   -moz-transform: rotate(90deg);
         //   -webkit-transform: rotate(90deg);
@@ -203,7 +202,7 @@ body{
           text-align: center;
           width: 100%;
           display: block;
-          font-size: 2.5vh;
+          font-size: 1.5vw;
           color: $darkest;
           padding: 10% 5%;
         }
@@ -215,7 +214,7 @@ body{
         -ms-transform: rotate(90deg);
         transform: rotate(90deg);
         opacity: .7;
-        font-size: 5vh;
+        font-size: 3.5vw;
       }
       .not{
         opacity: 1;
@@ -224,7 +223,7 @@ body{
         -o-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
         transform: rotate(0deg);
-        font-size: 10vh;
+        font-size: 6vw;
       }
       #nav-btn{
         color: $darkest;
@@ -283,7 +282,7 @@ body{
       li{
         margin: 10px 0;
         padding: 0;
-        font-size: .65vw;
+        font-size: .75vw;
         text-align: center;
         opacity: 0;
         display: none;
@@ -446,10 +445,11 @@ body{
     }
     p{
       padding: 0;
-      margin: 1% 0 0;
+      margin: 5% 0;
       clear: both;
       width: 45%;
       min-width: 200px;
+      font-size: 1.15em;
       display: block;
       float: right;
       margin-right: 17.5%;
@@ -513,11 +513,13 @@ body{
 
         h2{
           margin: 10% 0 0 0;
+          font-size: 2vw;
         }
         .portfolio-img-container{
           width: 7vw;
           height: 6.5vw;
           margin: 5% 0;
+          //margin-right: 15%;
           float: right;
 
           .portfolio-link-img{
@@ -538,6 +540,7 @@ body{
         }
         p{
           width: 80%;
+          min-width: 150px;
           margin: 5% auto;
           clear: both;
         }
