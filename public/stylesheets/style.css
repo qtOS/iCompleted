@@ -440,6 +440,9 @@ body {
           text-align: left; }
           body #portfolio-container ul li:nth-child(odd) .portfolio-img-container {
             float: left; }
+            body #portfolio-container ul li:nth-child(odd) .portfolio-img-container .fa {
+              font-size: 5vw;
+              color: black; }
         body #portfolio-container ul li h2 {
           margin: 10% 0 0 0;
           font-size: 2vw; }
