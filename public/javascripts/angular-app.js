@@ -14,6 +14,16 @@ iCompleted.controller('GoalDeliveryCtrl', function($scope, $http){
   $scope.fetch();
 });
 
+iCompleted.controller('MemoirDeliveryCtrl', function($scope, $http){
+  $scope.fetch = function(){
+    $http.get('/writing').success(function(data){
+      $scope.memoir = data;
+      console.log('here\'s the data: '+data);
+    });
+  };
+  $scope.fetch();
+})
+
 
 iCompleted.controller('GoalListCtrl', function ($scope, $http) {
 
@@ -55,3 +65,9 @@ iCompleted.controller('GoalListCtrl', function ($scope, $http) {
   };
   $scope.fetch();
 });
+
+iCompleted.controller('MemoirListCtrl', function($scope, $http){
+  //~~~ reference the controller above ^^^^
+
+
+})

@@ -1,0 +1,52 @@
+{{#if user}}
+<div id="blog-editor" ng-controller="MemoirListCtrl">
+  <article>
+    <div>
+      <h1>Create Blog Post</h1>
+        <form ng-submit="createMemoir(name, entry)">
+          <input class='form-control' type="text" ng-model="name" name="name" required/>
+          <input class='form-control' type="text" ng-model="entry" name="description" required/>
+          <input class='' type="submit" id="submit" value="Submit" />
+        </form>
+    </div>
+  <ul>
+    <li ng-repeat="memoir in memoirs | orderBy: 'createdAt' : reverse = true">
+      <span id="//memoir._id//" data-memoir="//memoir._id//"><span>
+      <p>
+        last updated: //memoir.updatedAt | date: 'short'//
+      </p>
+      <h2> //memoir.name//</h2>
+      <p><strong>//memoir.entry//</strong></p>
+      <span>
+        //memoir.createdAt | date:'medium'//
+      </span>
+      <form id="edit-form" ng-submit="updateMemoir()" style="display: none;">
+        <input type="text" id="name" name="name" ng-model="currentMemoir.name" required>
+        <input type="text" id="description" name="description" ng-model="currentMemoir.entry" required>
+        <input type="submit" name="submit-edit" value="edit">
+      </form>
+      <span data-goal="//memoir._id//" ng-click="completeMemoir(memoir)">X</span>
+      <span id="//memoir._id//" ng-click="edit(memoir)"><i class="fa fa-plus-square"></i></a>
+    </li>
+  </ul>
+</div>
+{{else}}
+<h1 id="activate-nd-list">Subject + Thought</h1>
+<div id="goal-delctrl" ng-controller="GoalDeliveryCtrl">
+  <ol id="goal-jump-list">
+    <li id="empty-li">&nbsp;</li>
+    <li ng-repeat="goal in goals | orderBy: 'createdAt' : reverse = true" class="refLi faded">
+      <a href="#//goal._id//" class="quickRef">//goal.name// | //goal.createdAt | date:'dd/MM'//</a>
+    </li>
+  </ol>
+  <ul id="goals-ul">
+    <li ng-repeat="goal in goals | orderBy: 'createdAt' : reverse = true">
+      <span id="//goal._id//" data-goal="//goal._id//"><span>
+      <span class="updatedAt timeStamp">Appended //goal.updatedAt | date: 'short'//</span>
+      <h2 class="goalName">//goal.name//</h2>
+      <p class="goalDesc"><span class="highlight">//goal.description//</span></p>
+      <span class="createdAt timeStamp">Published //goal.createdAt | date:'mediumDate'//</span>
+    </li>
+  </ul>
+</div>
+{{/if}}
