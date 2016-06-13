@@ -3,7 +3,11 @@ iCompleted.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('//');
     $interpolateProvider.endSymbol('//');
 });
-
+//~~~~~~~~~~~
+//~~~~~~~~~~~
+//~~~~~~~~~~~
+//~~~~~~~~~~~
+//delivery controllers
 iCompleted.controller('GoalDeliveryCtrl', function($scope, $http){
   $scope.fetch = function(){
     $http.get('/goals').success(function(data){
@@ -23,8 +27,10 @@ iCompleted.controller('MemoirDeliveryCtrl', function($scope, $http){
   };
   $scope.fetch();
 })
-
-
+//~~~~~~~~~~~
+//~~~~~~~~~~~
+//~~~~~~~~~~~
+//~~~~~~~~~~~
 iCompleted.controller('GoalListCtrl', function ($scope, $http) {
 
   $scope.fetch = function() {
